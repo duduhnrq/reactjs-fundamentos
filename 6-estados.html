@@ -14,10 +14,32 @@
 
     <script type="text/babel">
 
+        function Counter() {
+            const [counter, setCounter] = React.useState(0);
+
+            function increment() {
+                setCounter(counter + 1);
+            }
+
+            function decrement() {
+                setCounter(counter - 1);
+            }
+
+            return (
+                <>
+                    <p>Contador: {counter}</p>
+                    <button onClick={() => increment()}>Incrementar</button>
+                    <button onClick={() => decrement()}>Decrementar</button>
+
+                    <p>{counter > 10 ? 'Maior que 10' : 'Menor ou igual a 10'}</p>
+                </>
+            )
+        }
+
         function App() {
             return (
-                <main className="p-3">
-                    ...    
+                <main>
+                    <Counter />  
                 </main>
             )
         }

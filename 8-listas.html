@@ -14,10 +14,29 @@
 
     <script type="text/babel">
 
+        function ListNames() {
+            const [names] = React.useState([
+                'Diego',
+                'Cleiton',
+                'Robson',
+                'Rafael',
+                'Mayk',
+                'Eduardo'
+            ]);
+            
+            return (
+                <ul>
+                    {names.map((name, index) => (
+                        <li key={`${index}-${name}`}>{name}</li>
+                    ))}    
+                </ul>
+            )
+        }
+
         function App() {
             return (
-                <main className="p-3">
-                    ...    
+                <main>
+                    <ListNames />    
                 </main>
             )
         }
